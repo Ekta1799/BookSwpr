@@ -1,0 +1,26 @@
+.bookListingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.bookCard {
+  width: 300px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.MuiSkeleton-text {
+  margin-top: 10px;
+}
+
+.MuiSkeleton-text + .MuiSkeleton-text {
+  width: 80%;
+}
+
+.MuiSkeleton-root {
+  margin-bottom: 20px;
+  margin-left: auto;
+}

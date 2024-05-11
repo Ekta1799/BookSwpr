@@ -1,0 +1,53 @@
+.main {
+  background-image: url(./library.jpg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    margin-top: 0px;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.loginForm input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.forgoPassword {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.forgoPassword a {
+  color: #ff5900;
+}
+
+.loginButton,
+.googleLoginButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff5900;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.registerLink a {
+  color: #0378f5;
+}
+
+.error {
+  color: #fa6464;
+  font-size: 14px;
+  margin-top: 5px;
+}
