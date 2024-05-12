@@ -9,7 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
-import { getRandomImage } from "../../utils";
+import { getRandomImage, getLocalStorageItem } from "../../utils";
 
 export interface IBooksList {
   title: string;
@@ -28,10 +28,19 @@ const BookListing = () => {
     setRandomImage(getRandomImage());
   }, []);
 
+  const role = getLocalStorageItem("role");
+  const username = getLocalStorageItem("userName");
+
   const fetchData = async () => {
     try {
-      const response = await customAxios.get<IBooksList[]>("books");
-      setBooks([...response.data]);
+
+      if(role === "admin"){
+        const response = await customAxios.get<IBooksList[]>("books");
+        setBooks([...response.data]);
+      } else {
+        const response = await customAxios.get<IBooksList[]>("books/"+ username);
+        setBooks([...response.data]);
+      }
     } catch (error) {
       errorToastWrapper("Error while fetching book");
     }

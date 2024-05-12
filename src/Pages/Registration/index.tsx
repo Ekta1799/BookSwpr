@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ROUTES } from "../../utils/constants";
-import { errorToastWrapper } from "../../utils";
+import { errorToastWrapper, setLocalStorageItem } from "../../utils";
 import "./styles.css";
 
 type FormData = {
@@ -8,7 +8,7 @@ type FormData = {
   email: string;
   password: string;
   confirmPassword: string;
-  roles: any;
+  role: string;
 };
 
 type KeyValuePair = {
@@ -28,7 +28,7 @@ const Registration = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    roles: []
+    role: ""
   });
 
   const [errors, setErrors] = useState<KeyValuePair>({});
@@ -44,6 +44,9 @@ const Registration = () => {
       [name]: value
     }));
   };
+
+  setLocalStorageItem("role", formData.role);
+
 
   const validateForm = () => {
     const errors: KeyValuePair = {};
@@ -133,16 +136,16 @@ const Registration = () => {
           required
         />
         <select
-          id="roles"
-          name="roles"
-          value={formData.roles}
+          id="role"
+          name="role"
+          value={formData.role}
           onChange={handleSelectChange}
           required
         >
           <option value="">Select Role</option>
           <option value="admin">Admin</option>
           <option value="user">User</option>
-          <option value="moderator">Moderator</option>
+          <option value="mod">Moderator</option>
         </select>
         {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         <button type="submit">Register</button>
