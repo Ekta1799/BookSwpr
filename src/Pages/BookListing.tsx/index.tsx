@@ -10,6 +10,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 import { getRandomImage, getLocalStorageItem } from "../../utils";
+import { ROUTES } from "../../utils/constants";
 
 export interface IBooksList {
   title: string;
@@ -113,7 +114,8 @@ const BookListing = () => {
               >
                 {book.availability ? "Available" : "Not Available"}
               </Typography>
-              <Link to="/exchangerequests"> {/* Use Link component */}
+              <Link to={ROUTES.BOOK_EXCHANGE} state={{ title: book.title, 
+                recieverUsername: book.username, senderUsername: getLocalStorageItem("userName") }}> {/* Use Link component */}
                 <button>Exchange</button>
               </Link>
             </CardContent>

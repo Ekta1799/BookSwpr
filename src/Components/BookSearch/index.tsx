@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import customAxios from "../../utils/axios";
 import "./index.css";
 import { errorToastWrapper } from "../../utils";
-import { getRandomImage } from "../../utils";
+import { getRandomImage, getLocalStorageItem } from "../../utils";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -35,10 +35,17 @@ const BookSearch = () => {
         fetchData();
     }, []);
 
+    const role = getLocalStorageItem("role");
+  const username = getLocalStorageItem("userName");
     const fetchData = async () => {
         try {
-            const response = await customAxios.get<IBook[]>("books");
-            setBooks(response.data);
+            if(role === "admin"){
+                const response = await customAxios.get<IBook[]>("books");
+                setBooks([...response.data]);
+              } else {
+                const response = await customAxios.get<IBook[]>("books/"+ username);
+                setBooks([...response.data]);
+              }
         } catch (error) {
             errorToastWrapper("Error while fetching books");
         }

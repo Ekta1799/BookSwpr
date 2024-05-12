@@ -13,6 +13,7 @@ export const ROUTES = {
   BOOKS_SEARCHING:"/book-search",
   PROFILE: "/profile",
   BOOK_DETAILS: "/book-details",
+  BOOK_EXCHANGE: "/exchangerequests",
 } as const;
 
 export const images = [

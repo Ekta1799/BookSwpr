@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/constants";
 import "./styles.css";
 import { getLocalStorageItem } from "../../utils";
+import { Button } from "@mui/material";
 
 function Home() {
   const token = getLocalStorageItem("token");
@@ -12,7 +13,10 @@ function Home() {
         <div className="mainclass" style={{ display: "flex", flexDirection: "column" }}>
           <h1>Welcome to BookSwpr!!</h1>
           <h2> Your Ultimate Book Exchange Platform</h2>
-          {token && token?.length > 0 ? null : (
+          {token && token?.length > 0 ? <Link to={ROUTES.BOOKS_LISTING} className="findBooks">
+            <Button variant="contained">Find Books</Button>
+            </Link> : (
+            <>
             <Link
               to={ROUTES.REGISTER}
               style={{
@@ -22,7 +26,8 @@ function Home() {
             >
               <span>Join Us</span>
             </Link>
-          )}
+            </>
+            )}
         </div>
       </section>
       <div className="whatWeDoCards">

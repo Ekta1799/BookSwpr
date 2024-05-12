@@ -16,6 +16,7 @@ import Profile from "./Pages/Profile";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import BookSearch from "./Components/BookSearch";
+import ExchangeRequestForm from "./Components/ExchangeRequestForm/ExchangeRequestForm";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path={ROUTES.BOOKS_LISTING} element={<BookListing />} />
               <Route path={ROUTES.PROFILE} element={<Profile />} />
               <Route path={ROUTES.BOOKS_SEARCHING} element={<BookSearch />} />
+              <Route path={ROUTES.BOOK_EXCHANGE} element={<ExchangeRequestForm />} />
             </Route>
           </Routes>
         </div>

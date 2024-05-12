@@ -1,0 +1,49 @@
+.exchange-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.exchange-form-container h2 {
+  margin-bottom: 20px;
+}
+
+.exchange-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.exchange-form-container label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.exchange-form-container input,
+.exchange-form-container select {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.exchange-form-container select {
+  width: 100%;
+}
+
+.exchange-form-container button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: rgba(255, 89, 0, 0.53);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.exchange-form-container button:disabled {
+  background-color: orange;
+  cursor: not-allowed;
+}
