@@ -10,6 +10,7 @@ export const ROUTES = {
   LOGIN: "/login",
   REGISTER: "/register",
   BOOKS_LISTING: "/books-listing",
+  BOOKS_SEARCHING:"/book-search",
   PROFILE: "/profile",
   BOOK_DETAILS: "/book-details",
 } as const;

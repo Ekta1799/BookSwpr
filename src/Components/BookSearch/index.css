@@ -1,0 +1,54 @@
+.bookSearchContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-color: #ccc;
+}
+
+.searchHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.searchCriteria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    border-color: white;
+}
+
+.bookCard {
+
+    border-color: white;
+}
+
+.bookTitle {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.bookInfo {
+    margin-bottom: 8px;
+    border-color: #ccc;
+}
+
+.noBooksMessage {
+    text-align: center;
+    margin-top: 20px;
+}

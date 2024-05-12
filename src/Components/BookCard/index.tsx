@@ -36,6 +36,7 @@ const BookCard = ({ book }: { book: IBooksList }) => {
       genre: book.genre,
       title: book.title,
       image: randomImage,
+      username: book.username
     };
     const queryParams = queryString.stringify(bookData);
     navigate(`${ROUTES.BOOK_DETAILS}?${queryParams}`);

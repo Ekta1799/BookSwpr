@@ -8,6 +8,7 @@ type FormData = {
   email: string;
   password: string;
   confirmPassword: string;
+  roles: any;
 };
 
 type KeyValuePair = {
@@ -27,12 +28,21 @@ const Registration = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    roles: []
   });
 
   const [errors, setErrors] = useState<KeyValuePair>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSelectChange = (e:any) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
   const validateForm = () => {
@@ -122,6 +132,18 @@ const Registration = () => {
           placeholder="Confirm Password"
           required
         />
+        <select
+          id="roles"
+          name="roles"
+          value={formData.roles}
+          onChange={handleSelectChange}
+          required
+        >
+          <option value="">Select Role</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="moderator">Moderator</option>
+        </select>
         {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         <button type="submit">Register</button>
         {registrationStatus && <p>{registrationStatus}</p>}

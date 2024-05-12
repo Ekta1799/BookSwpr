@@ -9,7 +9,7 @@
 
 
 .container {
-  background-color: rgba(128, 128, 128, 0.769);
+  background-color: rgba(70, 5, 5, 0.916);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,11 @@
 }
 
 .container h2 {
-  color: #333;
+  color: orange;
+}
+
+.container h1 {
+  color: white;
 }
 
 .container form {
@@ -34,26 +38,36 @@
   border-radius: 5px;
 }
 
+.container select {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 320px;
+}
+
 .container button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: rgba(255, 89, 0, 0.53);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 320px;
 }
 
 .container button:hover {
-  background-color: #0056b3;
+  background-color: orange;
 }
 
 .login-text {
   margin-top: 10px;
   font-size: 14px;
+  color: orange;
 }
 
 .login-text a {
-  color: #007bff;
+  color: orange;
 }
 
 .google-login-button {

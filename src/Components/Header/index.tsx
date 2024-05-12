@@ -22,6 +22,10 @@ const Header = () => {
     navigate(ROUTES.REGISTER);
   };
 
+  const handleSearchClick = () => {
+    navigate(ROUTES.BOOKS_SEARCHING);
+  };
+
   const navigateToHome = () => {
     navigate(ROUTES.HOME);
   };
@@ -51,18 +55,19 @@ const Header = () => {
       <div className="logo" onClick={navigateToHome}>
         <img
           src={Logo}
-          alt="Bookopia Logo"
+          alt="BookSwpr Logo"
           style={{ maxWidth: "100%", maxHeight: "40px" }}
         />
         <span>BookSwpr</span>
       </div>
 
       <div className="searchBar">
-        <input
-          className="inputText"
-          type="text"
-          placeholder="Search books..."
-        />
+        {token?.length ? (
+                <button onClick={handleSearchClick}>Search Books</button>
+          ) : (
+            <>
+            </>
+        )}
       </div>
       <div className="loginAndRegisterButtons">
         {token?.length ? (

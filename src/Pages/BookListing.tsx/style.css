@@ -10,6 +10,47 @@
   width: 300px;
   padding: 20px;
   margin-bottom: 20px;
+  margin-right: 20px; /* Add margin-right for spacing between cards */
+  border: 1px solid #ccc; /* Add border for better visual separation */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.bookCard .MuiCardMedia-root {
+  border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+}
+
+.bookCard .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookCard .MuiTypography-h5 {
+  margin-bottom: 10px;
+}
+
+.bookCard .MuiTypography-body1 {
+  margin-bottom: 5px;
+}
+
+.bookCard button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 89, 0, 0.53);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookCard button:hover {
+  background-color: orange;
+}
+
+.MuiSkeleton-root {
+  margin-bottom: 20px;
+  margin-left: auto;
 }
 
 .MuiSkeleton-text {
@@ -18,9 +59,4 @@
 
 .MuiSkeleton-text + .MuiSkeleton-text {
   width: 80%;
-}
-
-.MuiSkeleton-root {
-  margin-bottom: 20px;
-  margin-left: auto;
 }

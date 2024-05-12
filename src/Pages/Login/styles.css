@@ -43,7 +43,11 @@
 }
 
 .registerLink a {
-  color: #0378f5;
+  color: orange;
+}
+
+.text { 
+  color: orange;
 }
 
 .error {

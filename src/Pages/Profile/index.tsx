@@ -3,7 +3,6 @@ import customAxios from "../../utils/axios";
 import { errorToastWrapper } from "../../utils";
 import "./styles.css";
 import { getLocalStorageItem } from "../../utils";
-import { useNavigate } from "react-router-dom";
 
 export type Genres = [
   "Psychological",
@@ -84,7 +83,7 @@ const UserProfilePopup = () => {
 
   return (
     <div className="container">
-      <h2>Registration</h2>
+      <h2>{username} Profile</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -135,7 +134,7 @@ const UserProfilePopup = () => {
           onChange={handlebookWishListChange}
           placeholder="Books WishList"
         />
-        <button type="submit">Register</button>
+        <button type="submit">Update profile</button>
         {registrationStatus && <p>{registrationStatus}</p>}
       </form>
     </div>

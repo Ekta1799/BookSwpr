@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link
 import customAxios from "../../utils/axios";
 import "./style.css";
 import { errorToastWrapper } from "../../utils";
@@ -16,11 +17,11 @@ export interface IBooksList {
   condition: string;
   genre: string;
   availability: boolean;
+  username: string;
 }
 
 const BookListing = () => {
-  const [books, setBooks] = useState<IBooksList[]>({} as any);
-
+  const [books, setBooks] = useState<IBooksList[]>([]);
   const [randomImage, setRandomImage] = useState("");
 
   useEffect(() => {
@@ -42,60 +43,74 @@ const BookListing = () => {
 
   return (
     <div className="bookListingContainer">
-    { Array.isArray(books) && books.map((book, bookIndex) => (
-      <div className="bookCard">
-    <Card
-      className="bookCard"
-      style={{ borderRadius: "10px", cursor: "pointer" }}
-    >
-      <CardMedia
-        component="img"
-        height="140"
-        image={randomImage}
-        alt="Book Cover"
-      />
-      <CardContent>
-        <Typography
-          variant="h5"
-          component="div"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            textTransform: "capitalize",
-            marginBottom: "16px",
-            alignItems: "flex-end",
-            alignContent: "flex-end",
-          }}
-        >
-          {book.title}
-          <Typography
-            variant="h6"
-            component="div"
-            className="textTransform"
-            style={{ marginTop: "8px" }}
+      {books.map((book, bookIndex) => (
+        <div key={bookIndex} className="bookCard">
+          <Card
+            className="bookCard"
+            style={{ borderRadius: "10px", cursor: "pointer" }}
           >
-          </Typography>
-        </Typography>
-        <Typography variant="body1" component="div" className="textTransform">
-          <b>Author:</b> {book.author}
-        </Typography>
-        <Typography variant="body1" component="div" className="textTransform">
-          <b>Genre:</b> {book.genre}
-        </Typography>
-        <Typography variant="body1" component="div" className="textTransform">
-          {book.condition} Book
-        </Typography>
-        <Typography
-          variant="body1"
-          component="div"
-          className="textTransform"
-        >
-          {book.availability ? "Available" : "Not Available"}
-        </Typography>
-      </CardContent>
-    </Card>
-    </div>
-    ))}
+            <CardMedia
+              component="img"
+              height="140"
+              image={randomImage}
+              alt="Book Cover"
+            />
+            <CardContent>
+              <Typography
+                variant="h5"
+                component="div"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  textTransform: "capitalize",
+                  marginBottom: "16px",
+                  alignItems: "flex-end",
+                  alignContent: "flex-end",
+                }}
+              >
+                {book.title}
+                <Typography
+                  variant="h6"
+                  component="div"
+                  className="textTransform"
+                  style={{ marginTop: "8px" }}
+                ></Typography>
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                className="textTransform"
+              >
+                <b>Author:</b> {book.author}
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                className="textTransform"
+              >
+                <b>Genre:</b> {book.genre}
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                className="textTransform"
+              >
+                {book.condition} Book
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                className="textTransform"
+              >
+                {book.availability ? "Available" : "Not Available"}
+              </Typography>
+              <Link to="/exchangerequests"> {/* Use Link component */}
+                <button>Exchange</button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      ))}
     </div>
   );
 };

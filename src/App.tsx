@@ -15,6 +15,7 @@ import Header from "./Components/Header";
 import Profile from "./Pages/Profile";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import BookSearch from "./Components/BookSearch";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path={ROUTES.LOGIN} element={<Login />} />
               <Route path={ROUTES.BOOKS_LISTING} element={<BookListing />} />
               <Route path={ROUTES.PROFILE} element={<Profile />} />
+              <Route path={ROUTES.BOOKS_SEARCHING} element={<BookSearch />} />
             </Route>
           </Routes>
         </div>

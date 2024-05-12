@@ -35,7 +35,7 @@ const Login = () => {
         navigate(ROUTES.BOOKS_LISTING);
       } 
     } catch (err: any) {
-      errorToastWrapper("Error while registration");
+      errorToastWrapper("Error while logging in");
       setRegistrationStatus("Error logging in")
     }
   };
@@ -67,11 +67,9 @@ const Login = () => {
           <button className="loginButton" type="submit">Submit
           </button>
         </div>
-        {registrationStatus && <p>{registrationStatus}</p>}
-
       </form>
       <div className="registerLink">
-        <p>
+        <p className="text">
           Don't have an account?
           <Link to={ROUTES.REGISTER}>
             <span> Register</span>

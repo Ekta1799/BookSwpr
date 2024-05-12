@@ -23,15 +23,6 @@ function Home() {
               <span>Join Us</span>
             </Link>
           )}
-          <Link
-            to={ROUTES.BOOKS_LISTING}
-            style={{
-              backgroundColor: "#3d5150",
-            }}
-            className="homePageButtons"
-          >
-            <span>Find Books</span>
-          </Link>
         </div>
       </section>
       <div className="whatWeDoCards">

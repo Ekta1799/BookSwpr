@@ -4,3 +4,7 @@
   padding: 20px 0;
   text-align: center;
 }
+
+a:link {
+  color: rgb(255, 119, 0);
+}
